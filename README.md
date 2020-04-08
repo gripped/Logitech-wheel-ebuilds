@@ -36,3 +36,16 @@ After that just copy games-util to /var/db/repos/localrepo
 (Many ways to to it, just for those that don't know)
 
 Credit to berarma for the driver and program.
+
+## Supported wheels
+* Driving Force / Formula EX
+* Driving Force Pro
+* Driving Force GT
+* Momo Force
+* Momo Racing Force
+* Speed Force Wireless
+* G25 Racing Wheel
+* G27 Racing Wheel
+* G29 Driving Force Racing Wheel
+* G920 Driving Force Racing Wheel
+
