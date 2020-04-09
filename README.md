@@ -1,15 +1,15 @@
 # Logitech-wheel-ebuilds
-new-lg4ff kernel module, oversteer and pyLinuxWheel
+new-lg4ff kernel module, oversteer and pyLinuxWheel Gentoo ebuilds.
 
 ## new-lg4ff
+Experimental Logitech Force Feedback module for driving wheels.
 https://github.com/berarma/new-lg4ff
 
-Notes:
 Your kernel must be configured with 
 
 CONFIG_HID_LOGITECH  set to 'm' and 
 
-CONFIG_LOGIWHEELS_FF set to 'y' 
+CONFIG_LOGIWHEELS_FF set to 'y'.
 
 (Device Drivers -> HID support -> Special HID drivers -> Logitech devices)
 
@@ -17,13 +17,15 @@ The module is installed as hid-logitech-new.ko.
 
 The original hid-logitech.ko is blacklisted in /etc/modprobe.d/new-lg4ff.conf but it should still be possible to switch between the two with rmmod and modprobe.
 
-Only tested on the gentoo sources 5.6.* kernels. I don't know if it work on the stable gentoo sources kernel or other kernels
+Only tested on the gentoo sources 5.6.* kernels. I don't know if it will work on the stable gentoo sources kernel or other kernels.
 
 ## oversteer
+An application to configure Logitech Wheels.
 https://github.com/berarma/oversteer
 
 
 ## pyLinuxWheel
+A simple utility to configure logitech steering wheels for Linux.
 https://gitlab.com/OdinTdh/pyLinuxWheel
 
 If you are running stable then you will need to to unmask dev-python/python-evdev as there is no stable ebuild. This is required for both GUI's
@@ -44,7 +46,7 @@ If you are running stable then you will need to to unmask dev-python/python-evde
 * G920 Driving Force Racing Wheel
 
 
-All built on my system in a clean stage 3 chroot so fingers crossed.
+All were built on my system in clean stage 3 chroot's so dependacies should be covered.
 
 I might make an overlay in future but an easy way to emerge these ebuilds is to create a local repo as detailed here
 https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/CustomTree#Defining_a_custom_repository
@@ -52,7 +54,7 @@ https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/CustomTree#Defining_a_custom
 Just the "Defining a custom repository" bit.
 After that just copy games-util to /var/db/repos/localrepo
 
-(Many ways to to it, just for those that don't know)
+(Many ways to it, just for those that don't know)
 
 Credit to berarma for the driver and oversteer.
 
