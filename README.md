@@ -1,5 +1,5 @@
 # Logitech-wheel-ebuilds
-new-lg4ff kernel module and oversteer 
+new-lg4ff kernel module, oversteer and pyLinuxWheel
 
 ## new-lg4ff
 https://github.com/berarma/new-lg4ff
@@ -22,20 +22,14 @@ Only tested on the gentoo sources 5.6.* kernels. I don't know if it work on the 
 ## oversteer
 https://github.com/berarma/oversteer
 
-If you are running stable then you will need to to unmask dev-python/python-evdev as there is no stable ebuild
+
+## pyLinuxWheel
+https://gitlab.com/OdinTdh/pyLinuxWheel
+
+If you are running stable then you will need to to unmask dev-python/python-evdev as there is no stable ebuild. This is required for both GUI's
 
 ```echo  dev-python/python-evdev ~amd64 ~x86 >> /etc/portage/package.accept_keywords ```
 
-Both build on my system in a clean stage 3 chroot on my system so fingers crossed.
-
-I might make an overlay in future but an easy way to emerge these ebuilds is to create a local repo as detailed here
-https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/CustomTree#Defining_a_custom_repository
-
-Just the "Defining a custom repository" bit.
-After that just copy games-util to /var/db/repos/localrepo
-(Many ways to to it, just for those that don't know)
-
-Credit to berarma for the driver and program.
 
 ## Supported wheels
 * Driving Force / Formula EX
@@ -48,4 +42,19 @@ Credit to berarma for the driver and program.
 * G27 Racing Wheel
 * G29 Driving Force Racing Wheel
 * G920 Driving Force Racing Wheel
+
+
+All built on my system in a clean stage 3 chroot so fingers crossed.
+
+I might make an overlay in future but an easy way to emerge these ebuilds is to create a local repo as detailed here
+https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/CustomTree#Defining_a_custom_repository
+
+Just the "Defining a custom repository" bit.
+After that just copy games-util to /var/db/repos/localrepo
+
+(Many ways to to it, just for those that don't know)
+
+Credit to berarma for the driver and oversteer.
+Credit to Alberto Vicente for pyLinuxWheel.
+
 
