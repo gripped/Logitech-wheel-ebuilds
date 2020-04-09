@@ -31,4 +31,3 @@ src_install() {
     insinto usr/share/locale
     doins -r locale/*
 }
- 
