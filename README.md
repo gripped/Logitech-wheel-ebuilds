@@ -24,7 +24,7 @@ https://github.com/berarma/oversteer
 
 If you are running stable then you will need to to unmask dev-python/python-evdev as there is no stable ebuild
 
-```echo  dev-python/python-evdev ~amd64 ~x86 >> etc/portage/package.accept_keywords ```
+```echo  dev-python/python-evdev ~amd64 ~x86 >> /etc/portage/package.accept_keywords ```
 
 Both build on my system in a clean stage 3 chroot on my system so fingers crossed.
 
