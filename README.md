@@ -54,7 +54,7 @@ https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/CustomTree#Defining_a_custom
 Just the "Defining a custom repository" bit.
 After that just copy games-util to /var/db/repos/localrepo
 
-(Many ways to it, just for those that don't know)
+(Many ways to do it, just for those that don't know)
 
 Credit to berarma for the driver and oversteer.
 
