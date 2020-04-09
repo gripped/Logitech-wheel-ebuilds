@@ -1,0 +1,51 @@
+diff -Naur a/dkms.conf b/dkms.conf
+--- a/dkms.conf	2020-03-16 21:16:20.000000000 +0000
++++ b/dkms.conf	2020-04-07 14:49:08.157172887 +0100
+@@ -2,7 +2,7 @@
+ PACKAGE_VERSION="0.3.1"
+ MAKE[0]="make KVERSION=$kernelver"
+ CLEAN="make clean"
+-BUILT_MODULE_NAME[0]="hid-logitech-new"
++BUILT_MODULE_NAME[0]="hid-logitech"
+ DEST_MODULE_NAME[0]="hid-logitech"
+ DEST_MODULE_LOCATION[0]="/kernel/drivers/hid"
+ AUTOINSTALL="yes"
+diff -Naur a/Kbuild b/Kbuild
+--- a/Kbuild	2020-03-16 21:16:20.000000000 +0000
++++ b/Kbuild	2020-04-07 14:46:24.486153718 +0100
+@@ -1,6 +1,6 @@
+-obj-m := hid-logitech-new.o
+-hid-logitech-new-y := hid-lg.o hid-lg4ff.o
+-hid-logitech-new-$(CONFIG_LOGITECH_FF)      += hid-lgff.o
+-hid-logitech-new-$(CONFIG_LOGIRUMBLEPAD2_FF)        += hid-lg2ff.o
+-hid-logitech-new-$(CONFIG_LOGIG940_FF)      += hid-lg3ff.o
++obj-m := hid-logitech.o
++hid-logitech-y := hid-lg.o hid-lg4ff.o
++hid-logitech-$(CONFIG_LOGITECH_FF)      += hid-lgff.o
++hid-logitech-$(CONFIG_LOGIRUMBLEPAD2_FF)        += hid-lg2ff.o
++hid-logitech-$(CONFIG_LOGIG940_FF)      += hid-lg3ff.o
+ ccflags-y := -Idrivers/hid
+diff -Naur a/Makefile b/Makefile
+--- a/Makefile	2020-03-16 21:16:20.000000000 +0000
++++ b/Makefile	2020-04-07 14:48:20.049167253 +0100
+@@ -8,20 +8,6 @@
+ 	$(MAKE) -C $(KDIR) M=$$PWD modules_install
+ 	depmod -A
+ 
+-load:
+-	rmmod hid-logitech 2> /dev/null || true
+-	rmmod hid-logitech-new 2> /dev/null || true
+-	modprobe hid-logitech-new ${OPTIONS}
+-
+-load_debug:
+-	rmmod hid-logitech 2> /dev/null || true
+-	rmmod hid-logitech-new 2> /dev/null || true
+-	modprobe hid-logitech-new dyndbg=+p ${OPTIONS}
+-
+-unload:
+-	rmmod hid-logitech-new
+-	modprobe hid-logitech
+-
+ clean:
+ 	$(MAKE) -C $(KDIR) M=$$PWD clean
+ 

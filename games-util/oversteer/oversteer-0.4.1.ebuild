@@ -18,6 +18,11 @@ RDEPEND="dev-python/pygobject
 		 dev-util/desktop-file-utils
 		 x11-libs/gtk+"
 
+src_prepare() {
+	eapply_user
+	sed -i 's/Utility;//' data/org.berarma.Oversteer.desktop.in
+}
+
 src_compile() {
 	meson build --prefix="/usr"
 	ninja -C build
