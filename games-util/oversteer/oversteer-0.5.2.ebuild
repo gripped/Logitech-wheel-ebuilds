@@ -7,7 +7,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 x86"
 
-BDEPEND="dev-util/meson"
+BDEPEND="dev-build/meson"
 
 RDEPEND="dev-python/pygobject
 		 dev-python/pyudev
